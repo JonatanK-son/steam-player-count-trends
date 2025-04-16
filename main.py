@@ -20,7 +20,6 @@ for appid in appids:
         res.raise_for_status()
         data = res.json()
 
-        print(f"\nAppID: {appid}")
         for timestamp, avg_players in data:
             if timestamp >= thirty_days_ago_ts:
                 date = pd.to_datetime(timestamp, unit="ms")
